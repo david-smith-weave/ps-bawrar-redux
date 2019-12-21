@@ -58,7 +58,7 @@
       "babel-preset-react-app"
     ]
   },
-  "eslint": {
+  "eslintConfig": {
     "extends": [
       "eslint:recommended",
       "plugin:react/recommended",
@@ -82,7 +82,7 @@
     "rules": {
       "no-debugger": "off",
       "no-console": "off",
-      "no unused-vars": "warn",
+      "no-unused-vars": "warn",
       "react/prop-types": "warn"
     },
     "settings": {
