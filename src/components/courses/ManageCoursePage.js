@@ -42,7 +42,7 @@ function ManageCoursePage({
   function handleSave(event) {
     event.preventDefault();
     saveCourse(course).then(() => {
-      history.pushState("/courses");
+      history.push("/courses");
     });
   }
 
