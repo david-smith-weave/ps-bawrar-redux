@@ -32,6 +32,7 @@ function ManageCoursePage({
   function handleChange(event) {
     const { name, value } = event.target;
     setCourse(prevCourse => ({
+      ...prevCourse,
       [name]: name === "authorId" ? parseInt(value, 10) : value
     }));
   }
