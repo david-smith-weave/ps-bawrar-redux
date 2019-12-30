@@ -12,9 +12,10 @@ class CoursesPage extends Component {
     this.setState({ course: course });
   };
 
-  handleSubmit() {
+  handleSubmit = event => {
+    event.preventDefault(); //stop submission
     alert(this.state.course.title);
-  }
+  };
 
   render() {
     return (
