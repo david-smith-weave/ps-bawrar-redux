@@ -8,13 +8,17 @@ import CourseList from "./CourseList";
 
 class CoursesPage extends Component {
   componentDidMount() {
-    this.props.actions.loadCourses().catch(error => {
-      alert("Loading courses failed" + error);
-    });
-
-    this.props.actions.loadAuthors().catch(error => {
-      alert("Loading authors failed" + error);
-    });
+    const { courses, authors, actions } = this.props;
+    if (courses.length === 0) {
+      actions.loadCourses().catch(error => {
+        alert("Loading courses failed" + error);
+      });
+    }
+    if (authors.length === 0) {
+      actions.loadAuthors().catch(error => {
+        alert("Loading authors failed" + error);
+      });
+    }
   }
 
   render() {
@@ -28,6 +32,7 @@ class CoursesPage extends Component {
 }
 
 CoursesPage.propTypes = {
+  authors: PropTypes.array.isRequired,
   courses: PropTypes.array.isRequired,
   actions: PropTypes.object.isRequired
 };
